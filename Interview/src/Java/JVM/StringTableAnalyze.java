@@ -6,7 +6,7 @@ package Java.JVM;
  */
 public class StringTableAnalyze {
     public static void main(String[] args) {
-        String s1 = "a";          // 在串池中添加"a"对象
+        String s1 = "a";          //在串池中添加"a"对象
         String s2 = "b";          //在串池中添加"b"对象
         String s3 = "a" + "b";    //首先编译器把该句优化为String s3 = "ab"  然后在串池中添加"ab"对象
         String s4 = s1 + s2;      //此句相当于new StringBuilder().append("a").append("b").toString()  即在堆内存中添加"ab"对象
