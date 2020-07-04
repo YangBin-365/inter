@@ -5,12 +5,15 @@ package Java.JVM;
  * @Date: 2020/7/1 0001 20:17
  */
 public class StringTableAnalyze {
+
+
     public static void main(String[] args) {
+
         String s1 = "a";          //在串池中添加"a"对象
         String s2 = "b";          //在串池中添加"b"对象
         String s3 = "a" + "b";    //首先编译器把该句优化为String s3 = "ab"  然后在串池中添加"ab"对象
         String s4 = s1 + s2;      //此句相当于new StringBuilder().append("a").append("b").toString()  即在堆内存中添加"ab"对象
-        String s5 = "ab";         //在串池中添加"ab"对象
+        String s5 = "ab";         //尝试在串池中添加"ab"对象，发现已有，直接指向串池中的"ab"
         String s6 = s4.intern();  //尝试把s4放入串池，可是此时串池已有"ab"，所以放入失败，s4仍然指向堆中的"ab",s6指向串池中的"ab"
 
         System.out.println(s3 == s4);  //false

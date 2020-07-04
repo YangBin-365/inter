@@ -1,4 +1,4 @@
-package Java.基础;
+package Java.基础._5_Inner类;
 
 /**
  * @Author: 杨斌
